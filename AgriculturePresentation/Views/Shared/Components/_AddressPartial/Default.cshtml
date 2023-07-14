@@ -1,0 +1,17 @@
+﻿@using EntityLayer.Concrete
+@model List<Address>
+
+<h3 class="tittle">Bize Ulaşın</h3>
+<p class="heading-btm-w3ls">Aşağıdaki form üzerinden bize mail gönderebilir veya
+    telefonla arayabilirsiniz.</p>
+@foreach (var x in Model)
+{
+    <div class="col-md-3 contact-left">
+        <h4>Bizim Adresimiz</h4>
+        <p>@x.Description1</p>
+        <p>@x.Description2</p>
+        <p>@x.Description3</p>
+        <h4>Telefon Numaramız</h4>
+        <p>@x.Description4</p>
+    </div>
+}

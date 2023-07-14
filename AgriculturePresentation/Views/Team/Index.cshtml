@@ -1,0 +1,56 @@
+﻿@using EntityLayer.Concrete
+@model List<Team>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="col-lg-12 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title"> Takım Listesi</h4>
+            <div class="table-responsive">
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Id</th>
+                            <th>Ad Soyad</th>
+                            <th>Görev</th>
+                            <th>İşlemler</th>
+                        </tr>
+                    </thead>
+
+
+                    @if (Model.Count == 0)
+                    {
+                        <tr>
+                            <td colspan="5" class="text-center text-danger">Takım Üyesi Bulunamadı</td>
+                        </tr>
+                    }
+
+                    else
+                    {
+                        @foreach (var x in Model)
+                        {
+                            <tr>
+                                <td class="py-1"><img src="@x.ImageUrl" alt="image" /></td>
+                                <td>@x.TeamID</td>
+                                <td>@x.PersonName</td>
+                                <td>@x.Title</td>
+                                <td>
+                                    <a href="/Team/DeleteTeam/@x.TeamID" class="btn btn-outline-danger">Sil</a> &nbsp;
+                                    <a href="/Team/EditTeam/@x.TeamID" class="btn btn-outline-info">Düzenle</a>
+                                </td>
+                            </tr>
+                        }
+                    }
+
+                </table>
+                <br />
+                <a href="/Team/AddTeam" class="btn btn-outline-success">Yeni üye Girişi</a>
+            </div>
+        </div>
+    </div>
+</div>
+
