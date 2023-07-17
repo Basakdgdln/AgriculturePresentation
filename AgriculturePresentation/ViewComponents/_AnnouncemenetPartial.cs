@@ -7,11 +7,11 @@ using System.Threading.Tasks;
 
 namespace AgriculturePresentation.ViewComponents
 {
-    public class _AnnouncementPartial: ViewComponent
+    public class _AnnouncemenetPartial: ViewComponent
     {
         private readonly IAnnouncemenetService _announcemenetService;
 
-        public _AnnouncementPartial(IAnnouncemenetService announcemenetService)
+        public _AnnouncemenetPartial(IAnnouncemenetService announcemenetService)
         {
             _announcemenetService = announcemenetService;
         }
