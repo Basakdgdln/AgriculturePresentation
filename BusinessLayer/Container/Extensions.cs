@@ -42,6 +42,9 @@ namespace BusinessLayer.Container
             services.AddScoped<IAdminService, AdminManager>();
             services.AddScoped<IAdminDal, EfAdminDal>();
 
-       }
+            services.AddScoped<IProductService, ProductManager>();
+            services.AddScoped<IProductDal, EfProductDal>();
+
+        }
     }
 }

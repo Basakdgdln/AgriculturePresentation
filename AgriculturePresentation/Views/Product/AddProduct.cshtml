@@ -1,0 +1,42 @@
+﻿@model EntityLayer.Concrete.Product
+@{
+    ViewData["Title"] = "AddProduct";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="col-12 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">Yeni Ürün Kaydı</h4>
+            <form class="forms-sample" method="post">
+                <div class="form-group">
+                    <label for="exampleInputName1">Ürün</label>
+                    <input type="text" class="form-control" placeholder="Ad Soyad" asp-for="Name">
+                    <span asp-validation-for="Name" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputEmail3">Kategori</label>
+                    <input type="text" class="form-control" placeholder="Görev" asp-for="CategoryID">
+                    <span asp-validation-for="CategoryID" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputEmail3">Fiyat</label>
+                    <input type="text" class="form-control" placeholder="Görsel Url" asp-for="Price">
+                    <span asp-validation-for="Price" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputEmail3">Stok</label>
+                    <input type="text" class="form-control" placeholder="Facebook linkini giriniz..." asp-for="Stock">
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputEmail3">Görsel</label>
+                    <input type="text" class="form-control" placeholder="Instagram linkini giriniz..." asp-for="ImagePath">
+                </div>
+                <button type="submit" class="btn btn-outline-info">Kaydet</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+
