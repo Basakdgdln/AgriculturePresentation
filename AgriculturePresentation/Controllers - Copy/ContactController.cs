@@ -32,6 +32,7 @@ namespace AgriculturePresentation.Controllers
         public IActionResult MessageDetails(int id)
         {
             var value = _contactService.GetById(id);
+            ViewBag.tarih = value.Date.ToShortDateString() + " " + value.Date.ToShortTimeString();
             return View(value);
         }
     }
