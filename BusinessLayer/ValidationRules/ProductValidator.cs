@@ -13,8 +13,9 @@ namespace BusinessLayer.ValidationRules
         public ProductValidator()
         {
             RuleFor(x => x.Name).NotEmpty().WithMessage("Ürün adı alanı boş geçilemez...");
-            RuleFor(x => x.Category).NotEmpty().WithMessage("Kategori alanı boş geçilemez...");
             RuleFor(x => x.Stock).NotEmpty().WithMessage("Ürün stok değeri boş geçilemez...");
+            RuleFor(x => x.Price).NotEmpty().WithMessage("Fiyat alanı boş geçilemez...");
         }
     }
 }
+

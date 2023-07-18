@@ -11,6 +11,6 @@ namespace EntityLayer.Concrete
         public int CategoryID { get; set; }
         public string Name { get; set; }
 
-        public ICollection<Product> Products { get; set; }
+        //public ICollection<Product> Products { get; set; }
     }
 }

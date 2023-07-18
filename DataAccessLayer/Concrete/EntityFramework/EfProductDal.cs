@@ -13,12 +13,5 @@ namespace DataAccessLayer.Concrete.EntityFramework
 {
     public class EfProductDal : GenericRepository<Product>, IProductDal
     {
-        public List<Product> GetProductWithCategory()
-        {
-            using (var context = new AgricultureContext())
-            {
-                return context.Products.Include(x => x.Category).ToList();
-            }
-        }
     }
 }

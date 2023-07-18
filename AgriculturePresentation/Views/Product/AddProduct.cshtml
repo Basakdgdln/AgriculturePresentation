@@ -10,29 +10,25 @@
             <h4 class="card-title">Yeni Ürün Kaydı</h4>
             <form class="forms-sample" method="post">
                 <div class="form-group">
-                    <label for="exampleInputName1">Ürün</label>
+                    <label>Ürün</label>
                     <input type="text" class="form-control" placeholder="Ad Soyad" asp-for="Name">
                     <span asp-validation-for="Name" class="text-danger"></span>
                 </div>
                 <div class="form-group">
-                    <label for="exampleInputEmail3">Kategori</label>
-                    <input type="text" class="form-control" placeholder="Görev" asp-for="CategoryID">
-                    <span asp-validation-for="CategoryID" class="text-danger"></span>
-                </div>
-                <div class="form-group">
-                    <label for="exampleInputEmail3">Fiyat</label>
-                    <input type="text" class="form-control" placeholder="Görsel Url" asp-for="Price">
+                    <label>Fiyat</label>
+                    <input type="text" class="form-control" placeholder="Fiyatı giriniz..." asp-for="Price">
                     <span asp-validation-for="Price" class="text-danger"></span>
                 </div>
                 <div class="form-group">
-                    <label for="exampleInputEmail3">Stok</label>
-                    <input type="text" class="form-control" placeholder="Facebook linkini giriniz..." asp-for="Stock">
+                    <label>Stok Adeti</label>
+                    <input type="text" class="form-control" placeholder="Stok adetini giriniz...." asp-for="Stock">
+                    <span asp-validation-for="Stock" class="text-danger"></span>
                 </div>
                 <div class="form-group">
-                    <label for="exampleInputEmail3">Görsel</label>
-                    <input type="text" class="form-control" placeholder="Instagram linkini giriniz..." asp-for="ImagePath">
+                    <label>Görsel Url</label>
+                    <input type="text" class="form-control" placeholder="Görsel yolunu giriniz..." asp-for="ImagePath">
                 </div>
-                <button type="submit" class="btn btn-outline-info">Kaydet</button>
+                <button type="submit" class="btn btn-outline-info">Değişiklikleri Kaydet</button>
             </form>
         </div>
     </div>

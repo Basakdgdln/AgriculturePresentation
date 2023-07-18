@@ -1,13 +1,19 @@
 ﻿using BusinessLayer.Abstract;
-using BusinessLayer.ValidationRules;
 using DataAccessLayer.Abstract;
 using EntityLayer.Concrete;
-using FluentValidation.Results;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using PagedList.Core;
+using PagedList.Core.Mvc;
+using DataAccessLayer.Contexts;
+using BusinessLayer.ValidationRules;
+using FluentValidation.Results;
+using Microsoft.AspNetCore.Mvc.Rendering;
+using BusinessLayer.Concrete;
+using DataAccessLayer.Concrete.EntityFramework;
 
 namespace AgriculturePresentation.Controllers___Copy
 {
@@ -22,7 +28,7 @@ namespace AgriculturePresentation.Controllers___Copy
 
         public IActionResult Index()
         {
-            return View(_productService.GetProductWithCategory());
+            return View(_productService.GetListAll());
         }
 
         [HttpGet]

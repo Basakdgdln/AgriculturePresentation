@@ -11,7 +11,7 @@ namespace BusinessLayer.Concrete
 {
     public class ProductManager : IProductService
     {
-        IProductDal _productDal;
+        private readonly IProductDal _productDal;
 
         public ProductManager(IProductDal productDal)
         {
@@ -31,11 +31,6 @@ namespace BusinessLayer.Concrete
         public List<Product> GetListAll()
         {
             return _productDal.GetListAll();
-        }
-
-        public List<Product> GetProductWithCategory()
-        {
-            return _productDal.GetProductWithCategory();
         }
 
         public void Insert(Product t)
