@@ -14,10 +14,9 @@
                     <thead>
                         <tr>
                             <th>#</th>
-                            <th>Id</th>
                             <th>Ad Soyad</th>
                             <th>Görev</th>
-                            <th>İşlemler</th>
+                            <th>Düzenle</th>
                         </tr>
                     </thead>
 
@@ -35,12 +34,11 @@
                         {
                             <tr>
                                 <td class="py-1"><img src="@x.ImageUrl" alt="image" /></td>
-                                <td>@x.TeamID</td>
                                 <td>@x.PersonName</td>
                                 <td>@x.Title</td>
                                 <td>
-                                    <a href="/Team/DeleteTeam/@x.TeamID" class="btn btn-outline-danger">Sil</a> &nbsp;
-                                    <a href="/Team/EditTeam/@x.TeamID" class="btn btn-outline-info">Düzenle</a>
+                                    <a href="/Team/EditTeam/@x.TeamID" class="btn btn-outline-success">
+                                    <i class="mdi mdi-lead-pencil"></i></a>
                                 </td>
                             </tr>
                         }
@@ -48,7 +46,7 @@
 
                 </table>
                 <br />
-                <a href="/Team/AddTeam" class="btn btn-outline-success">Yeni üye Girişi</a>
+                <a href="/Team/AddTeam" class="btn btn-outline-info">Yeni üye Girişi</a>
             </div>
         </div>
     </div>

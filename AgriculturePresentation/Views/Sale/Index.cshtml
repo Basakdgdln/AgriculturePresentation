@@ -1,5 +1,5 @@
 ﻿@using EntityLayer.Concrete
-@model List<Product>
+@model List<Sale>
 @{
     ViewData["Title"] = "Index";
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
@@ -13,10 +13,11 @@
                 <table class="table table-striped">
                     <thead>
                         <tr>
-                            <th>#</th>
+                            <th>Id</th>
+                            <th>Müşteri</th>
                             <th>Ürün</th>
-                            <th>Fiyat</th>
-                            <th>Stok</th>
+                            <th>Adet</th>
+                            <th>Toplam Tutar</th>
                             <th>Düzenle</th>
                         </tr>
                     </thead>
@@ -24,12 +25,13 @@
                     @foreach (var x in Model)
                     {
                         <tr>
-                            <td class="py-1"><img src="@x.ImagePath" alt="image" /></td>
-                            <td>@x.Name</td>
-                            <td>@x.Price</td>
-                            <td>@x.Stock</td>
+                            <td>#</td>
+                            <td>@x.Customer</td>
+                            <td>@x.Product.Name</td>
+                            <td>@x.Piece</td>
+                            <td>@x.TotalAmount</td>
                             <td>
-                                <a href="/Product/EditProduct/@x.ProductID" class="btn btn-outline-success">
+                                <a href="/Sale/EditSale/@x.SaleID" class="btn btn-outline-success">
                                     <i class="mdi mdi-lead-pencil"></i>
                                 </a>
                             </td>
@@ -38,11 +40,10 @@
 
                 </table>
                 <br />
-                <a href="/Product/AddProduct" class="btn btn-outline-info">Yeni Ürün Girişi</a>
+                <a href="/Sale/AddSale" class="btn btn-outline-info">Yeni Satış Yap</a>
                 <br /><br />
             </div>
         </div>
     </div>
 </div>
-
 

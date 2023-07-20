@@ -14,11 +14,11 @@
                     <table class="table table-striped">
                         <thead>
                             <tr>
-                                <th>Açıklama 1</th>
-                                <th>Açıklama 2</th>
-                                <th>Açıklama 3</th>
-                                <th>Açıklama 4</th>
-                                <th>Düzenle</th>
+                                <th>Adres</th>
+                                <th>Posta Kodu / Şehir</th>
+                                <th>Mail Adresi</th>
+                                <th>Telefon Numarası</th>
+                                <th>Güncelle</th>
                             </tr>
                         </thead>
 
@@ -29,7 +29,9 @@
                                 <td>@x.Description2</td>
                                 <td>@x.Description3</td>
                                 <td>@x.Description4</td>
-                                <td><a href="/Address/EditAddress/@x.AddressID" class="btn btn-outline-success">Güncelle</a></td>
+                                <td><a href="/Address/EditAddress/@x.AddressID" class="btn btn-outline-success">
+                                    <i class="mdi mdi-lead-pencil"></i>
+                                    </a></td>
                             </tr>
                         }
                     </table>

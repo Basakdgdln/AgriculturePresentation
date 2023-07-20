@@ -50,13 +50,6 @@ namespace AgriculturePresentation.Controllers
             return View();
         }
 
-        public IActionResult DeleteTeam(int id)
-        {
-            var value = _teamService.GetById(id);
-            _teamService.Delete(value);
-            return RedirectToAction("Index");
-        }
-
         [HttpGet]
         public IActionResult EditTeam(int id)
         {

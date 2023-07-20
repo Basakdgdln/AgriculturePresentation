@@ -50,12 +50,6 @@ namespace AgriculturePresentation.Controllers
             return View();
         }
 
-        public IActionResult DeleteImage(int id)
-        {
-            var value = _imageService.GetById(id);
-            _imageService.Delete(value);
-            return RedirectToAction("Index");
-        }
 
         [HttpGet]
         public IActionResult EditImage(int id)

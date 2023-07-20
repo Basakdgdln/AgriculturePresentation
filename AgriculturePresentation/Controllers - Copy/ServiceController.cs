@@ -12,7 +12,7 @@ namespace AgriculturePresentation.Controllers
 {
     public class ServiceController : Controller
     {
-        IServiceService _serviceService;
+       private readonly IServiceService _serviceService;
 
         public ServiceController(IServiceService serviceService)
         {
@@ -44,13 +44,6 @@ namespace AgriculturePresentation.Controllers
                 return RedirectToAction("Index");
             }
             return View(model);
-        }
-
-        public IActionResult DeleteService(int id)
-        {
-            var values = _serviceService.GetById(id);
-            _serviceService.Delete(values);
-            return RedirectToAction("Index");
         }
 
         [HttpGet]

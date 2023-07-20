@@ -16,6 +16,11 @@ namespace DataAccessLayer.Contexts
             optionsBuilder.UseSqlServer("server=BERKAY\\SQLEXPRESS; database=DbAgriculture; integrated security=true");
         }
 
+        internal List<Sale> Include()
+        {
+            throw new NotImplementedException();
+        }
+
         public DbSet<Address> Addresses { get; set; }
         public DbSet<Admin> Admins { get; set; }
         public DbSet<Contact> Contacts { get; set; }

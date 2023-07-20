@@ -1,0 +1,58 @@
+﻿@model EntityLayer.Concrete.Sale
+@{
+    ViewData["Title"] = "EditSale";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="col-12 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">Yeni Ürün Kaydı</h4>
+            <form class="forms-sample" method="post">
+                @Html.HiddenFor(x => x.SaleID)
+                <div class="form-group">
+                    <label>Müşteri</label>
+                    <input type="text" class="form-control" placeholder="Ad Soyad" asp-for="Customer">
+                </div>
+                <div class="form-group">
+                    <label>Ürün</label>
+                    @Html.DropDownListFor(x => x.ProductID, (List<SelectListItem>)ViewBag.product, "Seçiniz...", new { @class = "form-control" })
+                    <span asp-validation-for="ProductID" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label>Fiyat</label>
+                    <input type="text" id="txt1" class="form-control" placeholder="Stok adetini giriniz...." asp-for="Product.Price" value="@ViewBag.price" onchange="sum();" >
+                </div>
+                <div class="form-group">
+                    <label>Adet</label>
+                    <input type="number" id="txt2" class="form-control" placeholder="Stok adetini giriniz...." asp-for="Piece" onchange="sum();">
+                    <span asp-validation-for="Piece" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label>Toplam Tutar</label>
+                    <input type="text" id="txt3" class="form-control" placeholder="Görsel yolunu giriniz..." asp-for="TotalAmount" value="@ViewBag.amount" readonly>
+                    <span asp-validation-for="TotalAmount" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label>Tarih</label>
+                    <input type="text" class="form-control" placeholder="Görsel yolunu giriniz..." asp-for="Date" value="@ViewBag.date"  readonly>
+                </div>
+                <button type="submit" class="btn btn-outline-info">Satış Yap</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+<script>
+    function sum()
+    {
+        var deger1 = document.getElementById('txt1').value;
+        var deger2 = document.getElementById('txt2').value;
+        var sonuc = parseInt(deger1) * parseInt(deger2);
+        if (!isNaN(sonuc))
+        {
+            document.getElementById('txt3').value = sonuc;
+        }
+    }
+</script>

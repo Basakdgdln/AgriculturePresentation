@@ -15,7 +15,6 @@
                         <tr>
                             <th>#</th>
                             <th>Başlık</th>
-                            <th>Sil</th>
                             <th>Düzenle</th>
                         </tr>
                     </thead>
@@ -23,14 +22,18 @@
                         @foreach (var x in Model)
                         {
                             <tr>
-                                <td>@x.ServiceID</td>
+                                <td>#</td>
                                 <td>@x.Title</td>
-                                <td><a href="/Service/DeleteService/@x.ServiceID" class="btn btn-outline-danger">Sil</a></td>
-                                <td><a href="/Service/EditService/@x.ServiceID" class="btn btn-outline-success">Düzenle</a></td>
+                                <td>
+                                    <a href="/Service/EditService/@x.ServiceID" class="btn btn-outline-success">
+                                        <i class="mdi mdi-lead-pencil"></i>
+                                    </a>
+                                </td>
                             </tr>
                         }
                     </tbody>
                 </table>
+                <br />
                 <a href="/Service/AddService" class="btn btn-outline-info">Yeni Hizmet Girişi</a>
             </div>
         </div>

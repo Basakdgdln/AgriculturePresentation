@@ -19,7 +19,8 @@ namespace AgriculturePresentation.Controllers
 
         public IActionResult Index()
         {
-            return View(_contactService.GetListAll());
+            var deger = _contactService.GetListAll();
+            return View(deger);
         }
 
         public IActionResult DeleteMessage(int id)

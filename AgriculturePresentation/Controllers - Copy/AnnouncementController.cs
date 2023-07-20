@@ -31,16 +31,9 @@ namespace AgriculturePresentation.Controllers
         [HttpPost]
         public IActionResult AddAnnouncement(Announcement a)
         {
-            a.Date = DateTime.Parse(DateTime.Now.ToShortDateString());
+            a.Date = DateTime.Now;
             a.Status = false;
             _announcemenetService.Insert(a);
-            return RedirectToAction("Index");
-        }
-
-        public IActionResult DeleteAnnouncement(int id)
-        {
-            var value = _announcemenetService.GetById(id);
-            _announcemenetService.Delete(value);
             return RedirectToAction("Index");
         }
 

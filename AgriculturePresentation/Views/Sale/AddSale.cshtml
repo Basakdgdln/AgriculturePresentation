@@ -1,0 +1,37 @@
+﻿@model EntityLayer.Concrete.Sale
+@{
+    ViewData["Title"] = "AddSale";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="col-12 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">Yeni Ürün Kaydı</h4>
+            <form class="forms-sample" method="post">
+                <div class="form-group">
+                    <label>Müşteri</label>
+                    <input type="text" class="form-control" placeholder="Ad Soyad" asp-for="Customer">
+                </div>
+                <div class="form-group">
+                    <label>Ürün</label>
+                    @Html.DropDownListFor(x => x.ProductID, (List<SelectListItem>)ViewBag.product, "Seçiniz...", new { @class = "form-control" })
+                    <span asp-validation-for="ProductID" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label>Adet</label>
+                    <input type="number" class="form-control" placeholder="Stok adetini giriniz...." asp-for="Piece" >
+                    <span asp-validation-for="Piece" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label>Toplam Tutar</label>
+                    <input type="text" class="form-control" placeholder="Görsel yolunu giriniz..." asp-for="TotalAmount" value="@ViewBag.amount">
+                    <span asp-validation-for="TotalAmount" class="text-danger"></span>
+                </div>
+                <button type="submit" class="btn btn-outline-info">Satış Yap</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+

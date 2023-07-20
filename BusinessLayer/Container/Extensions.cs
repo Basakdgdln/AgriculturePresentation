@@ -15,7 +15,7 @@ namespace BusinessLayer.Container
     {
         public static void ContainerDependencies(this IServiceCollection services)
         {
-            services.AddScoped<IServiceService, ServiceManager>();        // yapıcı metot olıuşturduğum için bu metotlara karşılık gelen katmanlar eklenir.
+            services.AddScoped<IServiceService, ServiceManager>();       
             services.AddScoped<IServiceDal, EfServiceDal>();
 
             services.AddScoped<ITeamService, TeamManager>();
@@ -44,6 +44,9 @@ namespace BusinessLayer.Container
 
             services.AddScoped<IProductService, ProductManager>();
             services.AddScoped<IProductDal, EfProductDal>();
+
+            services.AddScoped<ISaleService, SaleManager>();
+            services.AddScoped<ISaleDal, EfSaleDal>();
 
         }
     }

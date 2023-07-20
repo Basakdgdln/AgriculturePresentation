@@ -34,12 +34,6 @@ namespace AgriculturePresentation.Controllers___Copy
             _adminService.Insert(a);
             return RedirectToAction("Index");
         }
-        public IActionResult DeleteAdmin(int id)
-        {
-            var value = _adminService.GetById(id);
-            _adminService.Delete(value);
-            return RedirectToAction("Index");
-        }
 
         [HttpGet]
         public IActionResult EditAdmin(int id)

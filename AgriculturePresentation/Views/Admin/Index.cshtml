@@ -12,25 +12,23 @@
             <h4 class="card-title">Admin Listesi</h4>
             <div class="table-responsive pt-3">
                 <table class="table table-bordered">
-                    <thead>
-                        <div><tr>
-                            <th>#</th>
-                            <th>Kullanıcı Adı</th>
-                            <th>Sil</th>
-                            <th>Düzenle</th>
-                        </tr></div>
-                    </thead>
-                    <tbody>
-                        @foreach (var x in Model)
-                        {
-                            <tr>
-                                <td>@x.AdminID</td>
-                                <td>@x.Username</td>
-                                <td><a href="/Admin/DeleteAdmin/@x.AdminID" class="btn btn-outline-danger">Sil</a></td>
-                                <td><a href="/Admin/EditAdmin/@x.AdminID" class="btn btn-outline-success">Düzenle</a></td>
-                            </tr>
-                        }
-                    </tbody>
+                    <tr>
+                        <th>#</th>
+                        <th>Kullanıcı Adı</th>
+                        <th>Düzenle</th>
+                    </tr>
+
+
+                    @foreach (var x in Model)
+                    {
+                        <tr>
+                            <td>@x.AdminID</td>
+                            <td>@x.Username</td>
+                            <td><a href="/Admin/EditAdmin/@x.AdminID" class="btn btn-outline-success">
+                                <i class="mdi mdi-lead-pencil"></i>
+                                </a></td>
+                        </tr>
+                    }
                 </table>
                 <br />
                 <br />

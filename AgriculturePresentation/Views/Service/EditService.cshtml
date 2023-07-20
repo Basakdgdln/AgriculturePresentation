@@ -10,19 +10,15 @@
             <h4 class="card-title">Hizmet Düzenleme Sayfası</h4>
             <form class="forms-sample" method="post">
                 <div class="form-group">
-                    @Html.HiddenFor(x=>x.ServiceID)
+                    @Html.HiddenFor(x => x.ServiceID)
                     <label>Başlık</label>
-                    <input type="text" class="form-control" placeholder="Başlık giriniz...">
-                </div>
-                <div class="form-group">
-                    <label>Görsel</label>
-                    <input type="text" class="form-control" placeholder="Görsel yolu giriniz...">
+                    <input type="text" class="form-control" placeholder="Başlık giriniz..." asp-for="Title">
                 </div>
                 <div class="form-group">
                     <label>Açıklama</label>
-                    <textarea class="form-control" rows="4" placeholder="Açıklama giriniz..."></textarea>
+                    <textarea class="form-control" rows="4" placeholder="Açıklama giriniz..." asp-for="Description"></textarea>
                 </div>
-                <button type="submit" class="btn btn-outline-info">Kaydet</button>
+                <button type="submit" class="btn btn-outline-info">Değişiklikleri Kaydet</button>
             </form>
         </div>
     </div>
