@@ -6,14 +6,13 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using PagedList.Core;
-using PagedList.Core.Mvc;
 using DataAccessLayer.Contexts;
 using BusinessLayer.ValidationRules;
 using FluentValidation.Results;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using BusinessLayer.Concrete;
 using DataAccessLayer.Concrete.EntityFramework;
+using X.PagedList;
 
 namespace AgriculturePresentation.Controllers___Copy
 {
@@ -26,9 +25,9 @@ namespace AgriculturePresentation.Controllers___Copy
             _productService = productService;
         }
 
-        public IActionResult Index()
+        public IActionResult Index(int page=1)
         {
-            return View(_productService.GetListAll());
+            return View(_productService.GetListAll().ToPagedList(page,10));
         }
 
         [HttpGet]

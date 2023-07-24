@@ -1,5 +1,7 @@
 ﻿@using EntityLayer.Concrete
-@model List<Image>
+@using X.PagedList
+@using X.PagedList.Mvc.Core
+@model IPagedList<Image>
 @{
     ViewData["Title"] = "Index";
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
@@ -33,6 +35,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
         <div class="card">
             <div class="card-body">
                 <div class="table-responsive">
+                    <a href="/Image/AddImage" class="btn btn-outline-info" style="float:right">Yeni Görsel Girişi</a>
+                    <br />
                     <h3 class="tittle" style="font-size:x-large">Fotoğraf Galerisi</h3>
                     <div class="agile_gallery_grids w3-agile">
                         <ul class="clearfix demo">
@@ -54,7 +58,15 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                         </ul>
                     </div>
                     <br />
-                    <a href="/Image/AddImage" class="btn btn-outline-info">Yeni Görsel Girişi</a>
+
+                    <div class="pagination" style="justify-content:center">
+                        @Html.PagedListPager(Model, page => Url.Action("Index", new { page }), new X.PagedList.Web.Common.PagedListRenderOptions
+                   {
+                   LiElementClasses = new List<string>
+                   { "page-link"}
+                   })
+                    </div>
+
                 </div>
             </div>
         </div>

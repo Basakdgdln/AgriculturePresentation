@@ -1,5 +1,7 @@
 ﻿@using EntityLayer.Concrete
-@model List<Product>
+@using X.PagedList
+@using X.PagedList.Mvc.Core
+@model IPagedList<Product>
 @{
     ViewData["Title"] = "Index";
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
@@ -38,11 +40,22 @@
 
                 </table>
                 <br />
-                <a href="/Product/AddProduct" class="btn btn-outline-info">Yeni Ürün Girişi</a>
-                <br /><br />
+
+                <div class="pagination" style="justify-content:center;">
+                    @Html.PagedListPager((IPagedList)Model, page => Url.Action("Index", new { page }),
+                   new X.PagedList.Web.Common.PagedListRenderOptions
+                   {
+                       LiElementClasses = new List<string>
+                       { "page-link"}
+                   })
+                </div>
+                <br />
+                <a href="/Product/AddProduct" class="btn btn-outline-info" style="height:45px; width:200px;">Yeni Ürün Girişi</a>
             </div>
         </div>
     </div>
 </div>
+
+
 
 

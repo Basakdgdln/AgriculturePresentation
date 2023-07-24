@@ -7,6 +7,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using X.PagedList;
 
 namespace AgriculturePresentation.Controllers
 {
@@ -19,9 +20,9 @@ namespace AgriculturePresentation.Controllers
             _imageService = imageService;
         }
 
-        public IActionResult Index()
+        public IActionResult Index(int page=1)
         {
-            return View(_imageService.GetListAll());
+            return View(_imageService.GetListAll().ToPagedList(page, 12));
         }
 
         [HttpGet]
